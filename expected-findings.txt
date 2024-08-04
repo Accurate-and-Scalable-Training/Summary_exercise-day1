@@ -51,3 +51,43 @@ WebGoat.NET-master/WebGoat/Content/StoredXSS.aspx.cs
           potential XSS was found, tainted data is "productNumber", sink is lblComments
 
            83┆ lblComments.Text = comments;
+    Dnn.Platform-develop/DNN Platform/Library/UI/UserControls/Help.cs
+    ❯❱ full_scan
+          potential XSS was found, tainted data is "ctlid", sink is this.helpFrame
+
+           55┆ this.helpFrame.Text = string.Format("<iframe src='{0}' id='helpFrame' width='100%'
+               height='500'></iframe>", objModuleControl.HelpURL);
+            ⋮┆----------------------------------------
+    ❯❱ full_scan
+          potential XSS was found, tainted data is "ctlid", sink is this.lblHelp
+
+           63┆ this.lblHelp.Text = Localization.GetString(ModuleActionType.HelpText, localResourceFile);
+            ⋮┆----------------------------------------
+    ❯❱ full_scan
+          potential XSS was found, tainted data is "ctlid", sink is this.lblInfo
+
+           99┆ this.lblInfo.Text = this.Server.HtmlDecode(strInfo);
+
+    Dnn.Platform-develop/DNN
+  Platform/Providers/HtmlEditorProviders/DNNConnect.CKE/Browser/Browser.aspx.cs
+    ❯❱ full_scan
+          potential XSS was found, tainted data is "Type", sink is this.lblModus
+
+          961┆ this.lblModus.Text = string.Format(browserModusText, browserModusTypeText);
+            ⋮┆----------------------------------------
+          996┆ this.lblModus.Text = string.Format(
+          997┆     "Browser-Modus: {0}",
+          998┆     string.Format("Page {0}", this.browserModus));
+
+    Dnn.Platform-develop/DNN
+  Platform/Providers/HtmlEditorProviders/DNNConnect.CKE/CKEditorOptions.ascx.cs
+    ❯❱ full_scan
+          potential XSS was found, tainted data is "minc", sink is this.lblModInst
+
+          1092┆ this.lblModInst.Text += this.request.QueryString["minc"];
+
+    Dnn.Platform-develop/DNN Platform/Website/DesktopModules/AuthenticationServices/DNN/Login.ascx.cs
+    ❯❱ full_scan
+          potential XSS was found, tainted data is "username", sink is this.txtUsername
+
+          189┆ this.txtUsername.Text = this.Request.QueryString["username"];
