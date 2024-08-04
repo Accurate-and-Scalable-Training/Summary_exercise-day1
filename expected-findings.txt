@@ -1,0 +1,53 @@
+WebGoat.NET-master/WebGoat/Content/StoredXSS.aspx.cs
+    ❯❱ full_scan
+          potential XSS was found, tainted data is "comment", sink is lblComments
+
+           52┆ lblComments.Text = comments;
+            ⋮┆----------------------------------------
+    ❯❱ full_scan
+          potential XSS was found, tainted data is "email", sink is lblComments
+
+           52┆ lblComments.Text = comments;
+
+    WebGoat.NET-master/WebGoat/WebGoatCoins/MainPage.aspx.cs
+    ❯❱ full_scan
+          potential XSS was found, tainted data is col, sink is cell2
+
+           42┆ cell2.Text = row[col].ToString();
+
+    WebGoat.NET-master/WebGoat/WebGoatCoins/Orders.aspx.cs
+    ❯❱ full_scan
+          potential XSS was found, tainted data is "orderNumber", sink is litErrorDetailMessage
+
+           83┆ litErrorDetailMessage.Text = "Error finding order number " + orderNumber + ". Details: " +
+               ex.Message;
+            ⋮┆----------------------------------------
+    ❯❱ full_scan
+          potential XSS was found, tainted data is "image", sink is lblOutput
+
+           92┆ lblOutput.Text = fi.FullName;
+            ⋮┆----------------------------------------
+    ❯❱ full_scan
+          potential XSS was found, tainted data is "image", sink is $LABEL
+
+          100┆ Response.AppendHeader("Content-Disposition", "attachment; filename=" + fi.Name);
+            ⋮┆----------------------------------------
+          101┆ Response.TransmitFile(fi.FullName);
+            ⋮┆----------------------------------------
+          102┆ Response.End();
+            ⋮┆----------------------------------------
+    ❯❱ full_scan
+          potential XSS was found, tainted data is 0, sink is link
+
+          114┆ link.Text = e.Row.Cells[0].Text;
+
+    WebGoat.NET-master/WebGoat/WebGoatCoins/ProductDetails.aspx.cs
+    ❯❱ full_scan
+          potential XSS was found, tainted data is "productNumber", sink is lblOutput
+
+           82┆ lblOutput.Text = output;
+            ⋮┆----------------------------------------
+    ❯❱ full_scan
+          potential XSS was found, tainted data is "productNumber", sink is lblComments
+
+           83┆ lblComments.Text = comments;
